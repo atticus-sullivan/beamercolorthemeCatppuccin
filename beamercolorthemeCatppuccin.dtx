@@ -1,0 +1,283 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2024 by Lukas Heindl <<+email+>>
+% ---------------------------------------------------------------------------
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Lukas Heindl.
+%
+% This work consists of the files beamercolorthemeCatppuccin.dtx and beamercolorthemeCatppuccin.ins
+% and the derived filebase beamercolorthemeCatppuccin.sty.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{beamercolorthemeCatppuccin.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{beamercolorthemeCatppuccin}
+%<*package>
+    [2024/02/25 v0.0.1 catppuccin beamer color theme]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{beamerarticle}
+\usepackage{beamercolorthemeCatppuccin}[2024/02/25]
+\usepackage{tabularx, booktabs}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{beamercolorthemeCatppuccin.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{68}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v0.0.1}{2024/02/25}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \providecommand*{\url}{\texttt}
+% \GetFileInfo{beamercolorthemeCatppuccin.dtx}
+% \title{The \textsf{beamercolorthemeCatppuccin} package}
+% \author{Lukas Heindl \\ \url{<+email+>} \\ \url{https://github.com/atticus-sullivan/beamercolorthemeCatppuccin}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+% \begin{abstract}
+% The LaTeX package \pkg{beamercolorthemeCatppuccinPalette} brings the
+% catppuccin theme to beamer.
+% \end{abstract}
+%
+% \section{Introduction}
+%
+% Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a nice
+% pastel theme in 4 flavours/styles (\emph{Latte}, \emph{Frapp\'e},
+% \emph{Macchiato}, \emph{Mocha}). This package makes use of the
+% \verb|catppuccinPalette|\footnote{\url{TODO}} package to bring these color
+% themes to beamer.
+%
+% \section{Usage}
+% Just load the color theme with \verb|\usecolortheme{Catppuccin}| and use
+% beamer just like usually.
+%
+% Note that this package also defines that \verb|\emph| uses the (fg) beamer
+% color \verb|structure|.
+%
+% As this package loads the \verb|catppuccinPalette| package, we provide the
+% \verb|paletteOpts| package option which is passed to that package (to avoid
+% option clashes).
+
+% This package also allows you to set a specific style which sets style of the
+% color scheme being used via the package option \verb|style|.
+%
+% \subsection{Package options}
+% \begin{tabularx}{\linewidth}{lX}
+%   \emph{Option} & \emph{Description}
+%   \\\toprule
+%   \verb|style| &
+%   set the style of the color scheme being used for beamer. Possible values:
+%   \verb|Latte| (default+initial), \verb|latte|, \verb|Frappe|, \verb|frappe|,
+%   \verb|Mocha|, \verb|mocha|
+%   \\
+%   \verb|paletteOpts| &
+%   pass options to the catppuccinPalette package when loading it
+%   \\
+%   \\\bottomrule
+% \end{tabularx}
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%
+%    \begin{macrocode}
+\ProvidesPackage{beamercolorthemeCatppuccin}
+  [2024/02/06 v0.0.1 A beamer theme using Catppuccin color scheme]
+\@ifclassloaded{beamer}{
+\mode<presentation>
+\DeclareOptionBeamer{style}{\def\beamer@catppuccintheme@style{#1}}
+\DeclareOptionBeamer{paletteOpts}{\def\beamer@catppuccintheme@paletteOpts{#1}}
+\ExecuteOptionsBeamer{style=Latte} % set default
+\ProcessOptionsBeamer
+%
+\RequirePackage[\beamer@catppuccintheme@paletteOpts]{catppuccinPalette}
+%    \end{macrocode}
+% \setbeamercolor*{structure}{
+%   bg=Cat\beamer@catppuccintheme@style Red!20,
+%   fg=Cat\beamer@catppuccintheme@style Red
+%   }
+% \setbeamercolor*{structure}{
+%   bg=Cat\beamer@catppuccintheme@style Peach!20,
+%   fg=Cat\beamer@catppuccintheme@style Peach
+%   }
+%    \begin{macrocode}
+\setbeamercolor*{structure}{
+  bg=Cat\beamer@catppuccintheme@style Green!20,
+  fg=Cat\beamer@catppuccintheme@style Green
+}
+%    \end{macrocode}
+% \setbeamercolor*{structure}{
+%   bg=Cat\beamer@catppuccintheme@style Teal!20,
+%   fg=Cat\beamer@catppuccintheme@style Teal
+%   }
+% \setbeamercolor*{structure}{
+%   bg=Cat\beamer@catppuccintheme@style Sapphire!20,fg=Cat\beamer@catppuccintheme@style Sapphire}
+% \setbeamercolor*{structure}{
+%   bg=Cat\beamer@catppuccintheme@style Lavender!20,
+%   fg=Cat\beamer@catppuccintheme@style Lavender
+%   }
+%
+%    \begin{macrocode}
+\setbeamercolor*{normal text}{
+  bg=Cat\beamer@catppuccintheme@style Base,
+  fg=Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor*{section in toc}{
+  fg=Cat\beamer@catppuccintheme@style Text,
+  bg=Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{alerted text}{
+  use=structure,fg=structure.fg!80!gray}
+\setbeamercolor*{palette primary}{
+  use=structure,
+  fg=structure.fg!60!Cat\beamer@catppuccintheme@style Text,
+  bg=gray!30!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{palette secondary}{
+  use=structure,
+  fg=structure.fg!70!Cat\beamer@catppuccintheme@style Text,
+  bg=gray!15!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{palette tertiary}{
+  use=structure,
+  bg=structure.fg!80!Cat\beamer@catppuccintheme@style Text,
+  fg=gray!10!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{palette quaternary}{
+  use=structure,
+  fg=structure.fg,
+  bg=gray!5!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{sidebar}{
+  use=structure,
+  fg=structure.fg,
+  bg=gray!15!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{palette sidebar primary}{
+  use=structure,
+  fg=structure.fg!10!Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor*{palette sidebar secondary}{
+  fg=Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{palette sidebar tertiary}{
+  use=structure,
+  fg=structure.fg!50!Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor*{palette sidebar quaternary}{
+  fg=gray!10!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{titlelike}{
+  parent=structure,
+  bg=Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{frametitle}{
+  bg=gray!10!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{frametitle right}{
+  bg=gray!60!Cat\beamer@catppuccintheme@style Base
+}
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+%    \end{macrocode}
+% from orchid
+%    \begin{macrocode}
+\setbeamercolor{block title}{
+  use=structure,
+  fg=Cat\beamer@catppuccintheme@style Base,
+  bg=structure.fg!75!Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor{block title alerted}{
+  use=alerted text,
+  fg=Cat\beamer@catppuccintheme@style Base,
+  bg=alerted text.fg!75!Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor{block title example}{
+  use=example text,
+  fg=Cat\beamer@catppuccintheme@style Base,
+  bg=example text.fg!75!Cat\beamer@catppuccintheme@style Text
+}
+\setbeamercolor{block body}{
+  parent=normal text,
+  use=block title,
+  bg=block title.bg!10!bg
+}
+\setbeamercolor{block body alerted}{
+  parent=normal text,
+  use=block title alerted,
+  bg=block title alerted.bg!10!bg
+}
+\setbeamercolor{block body example}{
+  parent=normal text,
+  use=block title example,
+  bg=block title example.bg!10!bg
+%    \end{macrocode}
+
+%    \begin{macrocode}
+}
+%    \end{macrocode}
+%
+% \begin{macro}{\emph}
+% Redefine emph to use the color defined in beamer
+%    \begin{macrocode}
+\renewcommand{\emph}[1]{{\usebeamercolor[fg]{structure}#1}}
+%    \end{macrocode}
+% \end{macro}
+% close if beamer loaded
+%    \begin{macrocode}
+\mode<all>
+}
+%    \end{macrocode}
+
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
