@@ -1,1 +1,1 @@
-module = "beamercolorthemeCatppuccin"
+module = "beamercolorthemecatppuccin"

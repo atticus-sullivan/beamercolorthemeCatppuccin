@@ -1,27 +1,27 @@
-# Readme for the package beamercolorthemeCatppuccin
+# Readme for the package beamercolorthemecatppuccin
 
 Author: Lukas Heindl (`<+email+>`).
 
 CTAN page: not yet
 
 ## License
-The LaTeX package `beamercolorthemeCatppuccin` is distributed under the LPPL 1.3 license.
+The LaTeX package `beamercolorthemecatppuccin` is distributed under the LPPL 1.3 license.
 
 ## Description
 
-The LaTeX package `beamercolorthemeCatppuccin` provides a catppuccin color theme
+The LaTeX package `beamercolorthemecatppuccin` provides a catppuccin color theme
 for beamer.
 
 ## Installation
 
 For a manual installation:
 
-* put the files `beamercolorthemeCatppuccin.ins` and `beamercolorthemeCatppuccin.dtx` in the same directory;
-* run `latex beamercolorthemeCatppuccin.ins` in that directory.
+* put the files `beamercolorthemecatppuccin.ins` and `beamercolorthemecatppuccin.dtx` in the same directory;
+* run `latex beamercolorthemecatppuccin.ins` in that directory.
 
-The file `beamercolorthemeCatppuccin.sty` will be generated.
+The file `beamercolorthemecatppuccin.sty` will be generated.
 
-The file `beamercolorthemeCatppuccin.sty` is the only file necessary to use the latex packet `beamercolorthemeCatppuccin`. 
+The file `beamercolorthemecatppuccin.sty` is the only file necessary to use the latex packet `beamercolorthemecatppuccin`. 
 You have to put it in the same directory as your document or (best) in a `texmf` tree. 
 
 Simplified version:
