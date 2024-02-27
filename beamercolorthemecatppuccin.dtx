@@ -26,13 +26,13 @@
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<package>\ProvidesPackage{beamercolorthemecatppuccin}
 %<*package>
-    [2024/02/25 v0.0.1 catppuccin beamer color theme]
+    [2024/02/27 v1.0.0 catppuccin beamer color theme]
 %</package>
 %
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage{beamerarticle}
-\usepackage{beamercolorthemecatppuccin}[2024/02/25]
+\usepackage{beamercolorthemecatppuccin}[2024/02/27]
 \usepackage{tabularx, booktabs}
 \EnableCrossrefs
 \CodelineIndex
@@ -45,7 +45,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{68}
+% \CheckSum{67}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -65,8 +65,9 @@
 %
 %
 % \changes{v0.0.1}{2024/02/25}{Converted to DTX file}
+% \changes{v1.0.0}{2024/02/27}{First full release}
 %
-% \DoNotIndex{\newcommand,\newenvironment}
+% \DoNotIndex{\newcommand,\newenvironment,\@ifclassloaded,\def,\renewcommand,\RequirePackage,\setbeamercolor,\usebeamercolor,\ProvidesPackage,\DeclareOptionBeamer,\ExecuteOptionsBeamer,\ProcessOptionsBeamer,\mode}
 %
 % \providecommand*{\url}{\texttt}
 % \GetFileInfo{beamercolorthemecatppuccin.dtx}
@@ -85,7 +86,7 @@
 % Catppuccin\footnote{\url{https://github.com/catppuccin/catppuccin}} is a nice
 % pastel theme in 4 flavours/styles (\emph{Latte}, \emph{Frapp\'e},
 % \emph{Macchiato}, \emph{Mocha}). This package makes use of the
-% \verb|catppuccinPalette|\footnote{\url{TODO}} package to bring these color
+% \verb|catppuccinPalette|\footnote{\url{https://github.com/atticus-sullivan/catppuccinPalette}} package to bring these color
 % themes to beamer.
 %
 % \section{Usage}
@@ -126,8 +127,6 @@
 % \fi
 %
 %    \begin{macrocode}
-\ProvidesPackage{beamercolorthemecatppuccin}
-  [2024/02/06 v0.0.1 A beamer theme using Catppuccin color scheme]
 \@ifclassloaded{beamer}{
 \mode<presentation>
 \DeclareOptionBeamer{style}{\def\beamer@catppuccintheme@style{#1}}
