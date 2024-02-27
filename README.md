@@ -1,6 +1,6 @@
 # Readme for the package beamercolorthemecatppuccin
 
-Author: Lukas Heindl (`<+email+>`).
+Author: Lukas Heindl (`oss.heindl+latex@protonmail.com`).
 
 CTAN page: not yet
 

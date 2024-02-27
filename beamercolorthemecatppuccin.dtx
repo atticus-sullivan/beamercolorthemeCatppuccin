@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2024 by Lukas Heindl <<+email+>>
+% Copyright (C) 2024 by Lukas Heindl <oss.heindl+latex@protonmail.com>
 % ---------------------------------------------------------------------------
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -71,7 +71,7 @@
 % \providecommand*{\url}{\texttt}
 % \GetFileInfo{beamercolorthemecatppuccin.dtx}
 % \title{The \textsf{beamercolorthemecatppuccin} package}
-% \author{Lukas Heindl \\ \url{<+email+>} \\ \url{https://github.com/atticus-sullivan/beamercolorthemecatppuccin}}
+% \author{Lukas Heindl \\ \url{oss.heindl+latex@protonmail.com} \\ \url{https://github.com/atticus-sullivan/beamercolorthemecatppuccin}}
 % \date{\fileversion~from \filedate}
 %
 % \maketitle
@@ -132,7 +132,7 @@
 \mode<presentation>
 \DeclareOptionBeamer{style}{\def\beamer@catppuccintheme@style{#1}}
 \DeclareOptionBeamer{paletteOpts}{\def\beamer@catppuccintheme@paletteOpts{#1}}
-\ExecuteOptionsBeamer{style=Latte} % set default
+\ExecuteOptionsBeamer{style=Latte,paletteOpts=} % set default
 \ProcessOptionsBeamer
 %
 \RequirePackage[\beamer@catppuccintheme@paletteOpts]{catppuccinPalette}
@@ -172,48 +172,51 @@
   bg=Cat\beamer@catppuccintheme@style Base
 }
 \setbeamercolor*{alerted text}{
-  use=structure,fg=structure.fg!80!gray}
+  use=structure,
+  fg=structure.fg!80!gray
+}
 \setbeamercolor*{palette primary}{
   use=structure,
   fg=structure.fg!60!Cat\beamer@catppuccintheme@style Text,
-  bg=gray!30!Cat\beamer@catppuccintheme@style Base
+  bg=Cat\beamer@catppuccintheme@style Surface2
 }
 \setbeamercolor*{palette secondary}{
   use=structure,
   fg=structure.fg!70!Cat\beamer@catppuccintheme@style Text,
-  bg=gray!15!Cat\beamer@catppuccintheme@style Base
+  bg=Cat\beamer@catppuccintheme@style Surface1
 }
 \setbeamercolor*{palette tertiary}{
   use=structure,
   bg=structure.fg!80!Cat\beamer@catppuccintheme@style Text,
-  fg=gray!10!Cat\beamer@catppuccintheme@style Base
+  fg=Cat\beamer@catppuccintheme@style Surface0
 }
 \setbeamercolor*{palette quaternary}{
   use=structure,
   fg=structure.fg,
-  bg=gray!5!Cat\beamer@catppuccintheme@style Base
+  bg=Cat\beamer@catppuccintheme@style Mantle
 }
 \setbeamercolor*{sidebar}{
   use=structure,
   fg=structure.fg,
-  bg=gray!15!Cat\beamer@catppuccintheme@style Base
+  bg=Cat\beamer@catppuccintheme@style Crust
 }
 \setbeamercolor*{palette sidebar primary}{
   use=structure,
   fg=structure.fg!10!Cat\beamer@catppuccintheme@style Text
 }
 \setbeamercolor*{palette sidebar secondary}{
-  fg=Cat\beamer@catppuccintheme@style Base
+  use=structure,
+  fg=structure.fg!20!Cat\beamer@catppuccintheme@style Text
 }
 \setbeamercolor*{palette sidebar tertiary}{
   use=structure,
-  fg=structure.fg!50!Cat\beamer@catppuccintheme@style Text
+  fg=structure.fg!30!Cat\beamer@catppuccintheme@style Text
 }
 \setbeamercolor*{palette sidebar quaternary}{
-  fg=gray!10!Cat\beamer@catppuccintheme@style Base
+  use=structure,
+  fg=structure.fg!40!Cat\beamer@catppuccintheme@style Text
 }
 \setbeamercolor*{titlelike}{
-  parent=structure,
   bg=Cat\beamer@catppuccintheme@style Base
 }
 \setbeamercolor*{frametitle}{
@@ -256,9 +259,6 @@
   parent=normal text,
   use=block title example,
   bg=block title example.bg!10!bg
-%    \end{macrocode}
-
-%    \begin{macrocode}
 }
 %    \end{macrocode}
 %
