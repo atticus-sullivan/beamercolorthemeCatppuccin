@@ -69,6 +69,7 @@ All files included in the `beamercolorthemecatppuccin/tex` directory.
 
 All files included in the `beamercolorthemecatppuccin/doc` directory.
 
+* .link.md 
 * MANIFEST.md 
 * README.md 
 * beamercolorthemecatppuccin.pdf 
@@ -80,6 +81,7 @@ The following group lists the files included in the CTAN package.
 
 ### CTAN files
 
+* .link.md 
 * MANIFEST.md 
 * README.md 
 * beamercolorthemecatppuccin.dtx 
