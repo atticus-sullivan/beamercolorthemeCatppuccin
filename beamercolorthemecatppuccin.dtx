@@ -132,38 +132,16 @@
 \@ifclassloaded{beamer}{
 \mode<presentation>
 \DeclareOptionBeamer{style}{\def\beamer@catppuccintheme@style{#1}}
+\DeclareOptionBeamer{accent}{\def\beamer@catppuccintheme@accent{#1}}
 \DeclareOptionBeamer{paletteOpts}{\def\beamer@catppuccintheme@paletteOpts{#1}}
-\ExecuteOptionsBeamer{style=Latte,paletteOpts=} % set default
+\ExecuteOptionsBeamer{style=Latte,paletteOpts=,accent=CtpGreen} % set default
 \ProcessOptionsBeamer
 %
 \RequirePackage[\beamer@catppuccintheme@paletteOpts]{catppuccinPalette}
-%    \end{macrocode}
-% \setbeamercolor*{structure}{
-%   bg=Cat\beamer@catppuccintheme@style Red!20,
-%   fg=Cat\beamer@catppuccintheme@style Red
-%   }
-% \setbeamercolor*{structure}{
-%   bg=Cat\beamer@catppuccintheme@style Peach!20,
-%   fg=Cat\beamer@catppuccintheme@style Peach
-%   }
-%    \begin{macrocode}
 \setbeamercolor*{structure}{
-  bg=Cat\beamer@catppuccintheme@style Green!20,
-  fg=Cat\beamer@catppuccintheme@style Green
+  bg=\beamer@catppuccintheme@accent !20,
+  fg=\beamer@catppuccintheme@accent
 }
-%    \end{macrocode}
-% \setbeamercolor*{structure}{
-%   bg=Cat\beamer@catppuccintheme@style Teal!20,
-%   fg=Cat\beamer@catppuccintheme@style Teal
-%   }
-% \setbeamercolor*{structure}{
-%   bg=Cat\beamer@catppuccintheme@style Sapphire!20,fg=Cat\beamer@catppuccintheme@style Sapphire}
-% \setbeamercolor*{structure}{
-%   bg=Cat\beamer@catppuccintheme@style Lavender!20,
-%   fg=Cat\beamer@catppuccintheme@style Lavender
-%   }
-%
-%    \begin{macrocode}
 \setbeamercolor*{normal text}{
   bg=Cat\beamer@catppuccintheme@style Base,
   fg=Cat\beamer@catppuccintheme@style Text
