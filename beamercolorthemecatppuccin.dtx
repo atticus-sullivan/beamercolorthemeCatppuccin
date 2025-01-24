@@ -45,7 +45,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{70}
+% \CheckSum{94}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -120,6 +120,9 @@
 %   \verb|accent| &
 %   allows setting the accent color being used.
 %   Must be a valid color from catppuccinpalette (like \verb|Sky|)
+%   \\
+%   \verb|blacktext|\,/\,\verb|whitetext| &
+%   sets the color of normal text to completely white\,/\,black in order to increase the contrast.
 %   \\\bottomrule
 % \end{tabularx}
 %
@@ -134,10 +137,14 @@
 %    \begin{macrocode}
 \@ifclassloaded{beamer}{
 \mode<presentation>
+\newif\ifbeamer@catppuccintheme@blacktext
+\newif\ifbeamer@catppuccintheme@whitetext
 \DeclareOptionBeamer{style}{\def\beamer@catppuccintheme@style{#1}}
 \DeclareOptionBeamer{accent}{\def\beamer@catppuccintheme@accent{#1}}
+\DeclareOptionBeamer{blacktext}{\csname beamer@catppuccintheme@blacktext#1\endcsname}
+\DeclareOptionBeamer{whitetext}{\csname beamer@catppuccintheme@whitetext#1\endcsname}
 \DeclareOptionBeamer{paletteOpts}{\def\beamer@catppuccintheme@paletteOpts{#1}}
-\ExecuteOptionsBeamer{style=Latte,paletteOpts=,accent=CtpGreen} % set default
+\ExecuteOptionsBeamer{style=Latte,paletteOpts=,accent=CtpGreen,blacktext=false,whitetext=false} % set default
 \ProcessOptionsBeamer
 %
 \RequirePackage[\beamer@catppuccintheme@paletteOpts]{catppuccinpalette}
@@ -145,6 +152,25 @@
   bg=\beamer@catppuccintheme@accent !20,
   fg=\beamer@catppuccintheme@accent
 }
+\ifbeamer@catppuccintheme@blacktext
+\setbeamercolor*{normal text}{
+  bg=Ctp\beamer@catppuccintheme@style Base,
+  fg=black
+}
+\setbeamercolor*{section in toc}{
+  fg=black,
+  bg=Ctp\beamer@catppuccintheme@style Base
+}
+\else\ifbeamer@catppuccintheme@blacktext
+\setbeamercolor*{normal text}{
+  bg=Ctp\beamer@catppuccintheme@style Base,
+  fg=white
+}
+\setbeamercolor*{section in toc}{
+  fg=white,
+  bg=Ctp\beamer@catppuccintheme@style Base
+}
+\else
 \setbeamercolor*{normal text}{
   bg=Ctp\beamer@catppuccintheme@style Base,
   fg=Ctp\beamer@catppuccintheme@style Text
@@ -153,6 +179,7 @@
   fg=Ctp\beamer@catppuccintheme@style Text,
   bg=Ctp\beamer@catppuccintheme@style Base
 }
+\fi\fi
 \setbeamercolor*{alerted text}{
   use=structure,
   fg=structure.fg!80!gray
