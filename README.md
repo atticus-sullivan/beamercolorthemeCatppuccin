@@ -65,6 +65,7 @@ Please refer to the [examples](https://github.com/catppuccin/beamercolortheme/tr
 
 Probably easier to look at is visiting the [theme gallery](https://catppuccin.github.io/beamercolortheme/) which is almost the same like the [theme gallery for the built-in themes](https://deic.uab.cat/~iblanes/beamer_gallery/) but adjusted for being able to browse theme, flavor and color.
 
+
 ## 💝 Thanks to
 - [Lukas](https://github.com/atticus-sullivan)
 
